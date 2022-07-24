@@ -1,8 +1,61 @@
-{% extends "music/layout.html" %}
+{% extends "music/layout.html" %} {% load static %} {% block body %}
+
+<div id="home">
+  <!--Search Bar on the Top-->
+  <div class="input-group">
+    <input
+      type="search"
+      class="form-control rounded"
+      placeholder="Search for Songs"
+      aria-label="Search"
+      aria-describedby="search-addon"
+    />
+    <button type="button" class="btn btn-outline-primary">search</button>
+  </div>
+  <!--********************-->
+
+  <h2>Top 10 most liked Songs</h2>
+
+  <div class="d-flex flex-column" style="margin-left: 30px; margin-right: 22px; width: 80%;" id="cover">
+    {% for song in songs %}
+    <div class="d-flex justify-content-between" id="gaana">
+      <div class="cover-container">
+        <img src="{{ song.image_url }}" alt="{{ song.name }}" heigth="30"  class="img-rounded" />
+      </div>
+      <div class="info-container">
+        <span style="font-weight: 650;">{{ song.name }}</span>
+        <div class="contributors">
+          <p class="track-artist" style="color: #5569BA">{{ song.artist.name }}</p>
+        </div>
+      </div>
+      <p class="duration">2:37</p>
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fas"
+        data-icon="play"
+        class="svg-inline--fa fa-play fa-w-14 icon-controller"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+        width="20"
+        height="30"
+        style="cursor: pointer;"
+      >
+        <path
+          fill="#394A8E"
+          d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+        ></path>
+      </svg>
+    </div>
+  {% endfor %}
+</div>
 
 
-{% block body %}
+      <h2 style="margin-top: 50px;">Followed Artists</h2>
 
 
+
+</div>
 
 {% endblock %}

@@ -47,7 +47,6 @@ div.content {
     display: none;
 }
 
-
 @media screen and (max-width: 727px) {
     .sidebar {
         width: 100%;
