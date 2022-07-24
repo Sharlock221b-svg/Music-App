@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django import forms
-from .models import User
+from .models import User, Likes, Artists, Followers, Genre, Songs
 from django.db import IntegrityError
 
 

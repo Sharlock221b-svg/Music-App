@@ -14,6 +14,14 @@ class Artists(models.Model):
     def __str__(self):
         return f"Singer {self.name}"
 
+class Genre(models.Model):
+    """name,image(url)"""
+    name = models.CharField(max_length=100)
+    image = models.URLField(max_length=500)
+
+    def __str__(self):
+        return f"{self.name}"          
+
 class Songs(models.Model):
     """name, artist fk Artists, song_file (file_field), image_url, likes, genre"""
     name = models.CharField(max_length=100)
@@ -21,7 +29,7 @@ class Songs(models.Model):
     song_file=models.FileField(upload_to='songs/')
     image_url = models.URLField(blank=True,max_length=500)
     likes = models.IntegerField(default=0)
-    genre = models.CharField(max_length=100, null=True)
+    genre = models.ForeignKey(Genre, on_delete=models.DO_NOTHING, related_name="get_cat_songs", null=True)
 
     def __str__(self):
         return f"{self.name} by {self.artist.name}"
@@ -42,3 +50,4 @@ class Likes(models.Model):
 
     def __str__(self):
         return f"{self.liked_song.name} liked by {self.user.username}"
+
