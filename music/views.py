@@ -11,9 +11,10 @@ from django.db import IntegrityError
 @login_required(login_url="login")
 def index(request):
     songs = Songs.objects.all().order_by("-likes")[:10]
-
+    artists = Artists.objects.all()
     return render(request, "music/index.html", {
         "songs": songs,
+        "artists": artists,
     })
 
 

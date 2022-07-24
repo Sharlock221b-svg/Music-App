@@ -20,7 +20,7 @@
     {% for song in songs %}
     <div class="d-flex justify-content-between" id="gaana">
       <div class="cover-container">
-        <img src="{{ song.image_url }}" alt="{{ song.name }}" heigth="30"  class="img-rounded" />
+        <img src="{{ song.image_url }}" alt="{{ song.name }}" heigth="30"  class="img-rounded" id="songimg" />
       </div>
       <div class="info-container">
         <span style="font-weight: 650;">{{ song.name }}</span>
@@ -53,9 +53,14 @@
 
 
       <h2 style="margin-top: 50px;">Followed Artists</h2>
-
-
-
+      <div class="d-flex justify-content-around" style="flex-wrap: wrap">
+      {% for artist in artists %}
+      <a class="card">
+      <img class="pic" src="{{ artist.artist_photo }}" alt="{{ artist.name }}">
+       <span id="artist_name">{{ artist.name }}</span>
+      </a>
+      {% endfor %}
+      </div>
 </div>
 
 {% endblock %}

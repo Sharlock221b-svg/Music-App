@@ -35,7 +35,7 @@ h2{
     justify-content: space-between;
 }
 
-img{
+#songimg{
     image-rendering: auto;
     width: 120px;
     max-height: 80px;
@@ -49,6 +49,29 @@ img{
     background-color: #BAA655;
 }
 
+
+.pic{
+    max-width: 230px;
+    height: 260px;
+   /* height: fit-content;
+    width: fit-content;*/
+    image-rendering: auto;
+    flex-wrap: wrap;
+    border-radius: 6px;
+}
+
+.card{
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 18px;
+    cursor: pointer;
+}
+
+#artist_name{
+    color: black;
+    text-align: center;
+}
+
 @media screen and (max-width: 727px) {
     #home{
         margin-left: 0px;
@@ -57,6 +80,5 @@ img{
     .input-group{
         width: auto;
         padding-top: 15px;
-    }
-    
+    }   
 }
