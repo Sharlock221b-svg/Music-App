@@ -30,7 +30,7 @@ class Songs(models.Model):
     image_url = models.URLField(blank=True,max_length=500)
     likes = models.IntegerField(default=0)
     genre = models.ForeignKey(Genre, on_delete=models.DO_NOTHING, related_name="get_cat_songs", null=True)
-
+    length = models.TimeField(null=True)
     def __str__(self):
         return f"{self.name} by {self.artist.name}"
 
